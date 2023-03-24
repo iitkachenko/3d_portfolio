@@ -49,7 +49,7 @@ const Navbar = () => {
               className="w-[28px] h-[28px] object-contain cursor-pointer"
               onClick={() => setToggle(prevToggle => !prevToggle)}
             />
-            <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+            <div className={`${!toggle ? 'hidden' : 'flex'} p-6 bg-gradient-to-r from-tertiary to-black absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
               <ul className="list-none flex justify-end
               items-start flex-col gap-4">
                 {navLinks.map((link) => (
@@ -66,7 +66,12 @@ const Navbar = () => {
                       setActive(link.title);
                     }}
                   >
-                    <a href={`#${link.id}`}>{link.title}</a>
+                    <a
+                      href={`#${link.id}`}
+                      className='hover:text-white'
+                    >
+                      {link.title}
+                    </a>
                   </li>
                 ))}
               </ul>
